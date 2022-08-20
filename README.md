@@ -1,26 +1,25 @@
-# Ansible Role: template
+# Ansible Role: Backup Directory
 
-A brief description of the role goes here.
+BAcks up a given directory daily.  Keeps the last 30 days of backups by default.
 
 ## Requirements
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+None
 
 ## Role Variables
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+### Main Variables
 
-## Dependencies
+| Name | Details |
+| --- | --- |
+| `parent_directory` | The full parent directory of the actual directory you want to backup.  For example, if you want to backup `/usr/bin/local`, this should be set to '/usr/bin' |
+| `directory` | The directory within the parent (given above) that should be backed up.  Using the same example as above, this would be `local` |
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+### Default Variables
 
-## Example Playbook
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+| Name | Default Value | Details |
+| --- | --- | --- |
+| `retention_days` | `30` | Number of days to keep backups |
 
 ## License
 

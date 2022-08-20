@@ -1,10 +1,9 @@
 galaxy_info:
   author: Usman Iqbal
   namespace: usmanatron
-  description: your role description
-
+  role_name: backup_directory
+  description: Backup a directory with basic retention management
   license: MIT
-
   min_ansible_version: "2.1"
 
   platforms:

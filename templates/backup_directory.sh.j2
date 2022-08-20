@@ -1,0 +1,8 @@
+#!/bin/bash
+# {{ ansible_managed }}
+DATE=$(date +%Y%m%d)
+BACKUPS_DIR="{{ backup_directory }}"
+
+tar -zcvf "$BACKUPS_DIR/{{ directory }}-$DATE.tar.gz" "{{ source_directory }}"
+
+/usr/bin/find "$BACKUPS_DIR/" -type f -ctime +{{ retention_days }} -exec rm {} \;

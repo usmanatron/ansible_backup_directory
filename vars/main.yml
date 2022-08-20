@@ -1,2 +1,6 @@
 ---
-# vars file for ansible_role_template
+parent_directory: ""
+directory: ""
+
+source_directory: "{{ parent_directory }}/{{ directory }}"
+backup_directory: "{{ parent_directory }}/backups/{{ directory }}"
